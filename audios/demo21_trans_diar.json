@@ -1,0 +1,72 @@
+{
+  "language": "en",
+  "segments": [
+    {
+      "speaker": "Speaker 1",
+      "text": "hello everyone thank you guys for coming to our weekly student success meeting and let's just get started here i have our list of chronically absent students here and i've been noticing a troubling trend a lot of students are skipping on fridays does anyone have any idea what's going on",
+      "start": 0.0,
+      "end": 16.74
+    },
+    {
+      "speaker": "Speaker 3",
+      "text": "i've heard some of my mentis talking about how it's really hard to get out of bed on fridays it might be good if we did something like a pancake breakfast to encourage them to come",
+      "start": 17.09,
+      "end": 25.78
+    },
+    {
+      "speaker": "Speaker 1",
+      "text": "i think that is a great idea",
+      "start": 26.07,
+      "end": 27.62
+    },
+    {
+      "speaker": "Speaker 1",
+      "text": "i want to try that next week",
+      "start": 27.91,
+      "end": 29.03
+    },
+    {
+      "speaker": "Speaker 4",
+      "text": "it might also be because a lot of students have been getting sick now that it's getting colder outside i've had a number of students come by my office with symptoms like sniffling and coughing we should put up posters with tips for not getting sick since it's almost flucies and wash our hands after the bathroom stuff like that",
+      "start": 30.01,
+      "end": 44.635
+    },
+    {
+      "speaker": "Speaker 1",
+      "text": "i think that's a good idea and it'll be a good reminder for the teachers as well to one other things i want to talk about there's a student i've noticed here john smith he's missed seven days already and it's only november does anyone have an idea what's going on with him",
+      "start": 44.635,
+      "end": 59.97
+    },
+    {
+      "speaker": "Speaker 3",
+      "text": "i might be able to fail on the gaps there i talked to john today and he's really stressed out he's been dealing with helping his parents take care of his younger siblings during the day it might actually be a good idea if he spoke to the guidance councillor a little bit",
+      "start": 60.25,
+      "end": 73.375
+    },
+    {
+      "speaker": "Speaker 2",
+      "text": "i can talk to john today if you want to send him to my office after you meet with him it's a lot to deal with for a middle schooler",
+      "start": 73.375,
+      "end": 80.31
+    },
+    {
+      "speaker": "Speaker 5",
+      "text": "and i can help out with the family's childcare needs i will look for some free or low cost",
+      "start": 80.64,
+      "end": 86.65
+    },
+    {
+      "speaker": "Speaker 5",
+      "text": "resources in the community to share with john and he can share them with his family",
+      "start": 86.93,
+      "end": 91.055
+    },
+    {
+      "speaker": "Speaker 1",
+      "text": "it is a really good ideas here today thanks for coming and if no one has anything else i think we can rap up",
+      "start": 91.055,
+      "end": 97.24
+    }
+  ],
+  "method": "trans_diarize"
+}

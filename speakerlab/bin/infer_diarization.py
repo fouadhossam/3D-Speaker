@@ -17,6 +17,7 @@ import numpy as np
 from tqdm import tqdm
 from scipy import optimize
 import json
+from pydub import AudioSegment
 
 import torch
 import torch.multiprocessing as mp
@@ -438,6 +439,18 @@ def main_process(rank, nprocs, args, wav_list):
         else:
             out_file = '%s.%s'%(wav_path.rsplit('.', 1)[0], args.out_type)
         diarization.save_diar_output(out_file, wav_id)
+        
+def ensure_wav(audio_path):
+    if audio_path.lower().endswith(".wav"):
+        return audio_path
+
+    wav_path = os.path.splitext(audio_path)[0] + ".wav"
+
+    audio = AudioSegment.from_file(audio_path)
+    audio = audio.set_frame_rate(16000).set_channels(1)
+    audio.export(wav_path, format="wav")
+
+    return wav_path
 
 def main():
     args = parser.parse_args()
@@ -451,17 +464,15 @@ def main():
         get_segmentation_model(args.hf_access_token)
     print(f'[INFO]: Model downloaded successfully.')
 
-    if args.wav.endswith('.wav'):
-        # input is a wav file
-        wav_list = [args.wav]
+    if os.path.isfile(args.wav):
+        wav_path = ensure_wav(args.wav)
+        wav_list = [wav_path]
     else:
         try:
-            # input should be a wav list
-            with open(args.wav,'r') as f:
-                wav_list = [i.strip() for i in f.readlines()]
+            with open(args.wav, 'r') as f:
+                wav_list = [ensure_wav(i.strip()) for i in f.readlines()]
         except:
-            raise Exception('[ERROR]: Input should be a wav file or a wav list.')
-    assert len(wav_list) > 0
+            raise Exception('[ERROR]: Input should be an audio file or a file list.')
 
     if args.nprocs is None:
         ngpus = torch.cuda.device_count()
